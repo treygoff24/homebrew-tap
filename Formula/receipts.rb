@@ -1,25 +1,25 @@
 class Receipts < Formula
   desc "Source-verified research at function-call latency. Agent-first CLI: every claim comes back with a source URL, quote, and verdict."
   homepage "https://github.com/treygoff24/receipts"
-  version "0.2.0"
+  version "0.2.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/receipts/releases/download/v0.2.0/receipts-aarch64-apple-darwin.tar.xz"
-      sha256 "98a657268f5fcb070535dc54c66ad7708704f6e8d9078421f67a06a2a386aae4"
+      url "https://github.com/treygoff24/receipts/releases/download/v0.2.1/receipts-aarch64-apple-darwin.tar.xz"
+      sha256 "4e3cdbb8b92b41d1859969a47c17d78b53f3de024a9615cac215c310bf701a22"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/receipts/releases/download/v0.2.0/receipts-x86_64-apple-darwin.tar.xz"
-      sha256 "e843135119fe90a494c74a9871d7292a920fbb33b499a1e7063d0d2355021395"
+      url "https://github.com/treygoff24/receipts/releases/download/v0.2.1/receipts-x86_64-apple-darwin.tar.xz"
+      sha256 "a2e15ef37b6152a29d9aa7f7489f7e0f08ce46e6037aa8fe1d9ea7eecaec0255"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/receipts/releases/download/v0.2.0/receipts-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "4713f0c955c9a2e7bdb9a10147215a9ff1649df9a84477d69913945afa918b36"
+      url "https://github.com/treygoff24/receipts/releases/download/v0.2.1/receipts-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "1a40162becf633b94b0dfe78a28a10346c26d027f6318d7d1c967afbb160c9bb"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/receipts/releases/download/v0.2.0/receipts-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a4ee6daa8cdf6d47c7b4cd8c63feeba8bc837cc73d15c17092117faa9913e9ea"
+      url "https://github.com/treygoff24/receipts/releases/download/v0.2.1/receipts-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e92f3ab4cb0b405d5eff04789c55a2c8825a074409fa436a297ab4c5f3f2925f"
     end
   end
   license "Apache-2.0"
