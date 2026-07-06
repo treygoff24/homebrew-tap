@@ -1,25 +1,25 @@
 class Lens < Formula
   desc "Agent-first CLI for natural-language image-library search: caption once with Cerebras vision, then search the whole index in one model call."
   homepage "https://github.com/treygoff24/lens"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/lens/releases/download/v0.1.1/lens-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "0f52c23b5c17f355ff114a545455590f5bbf894e64cbcce700c8fcee8829e80c"
+      url "https://github.com/treygoff24/lens/releases/download/v0.1.2/lens-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "d28eb885bbeae6be18a0931744115e39a2e9753db0ac3fa9dd6f649c221c254a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/lens/releases/download/v0.1.1/lens-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "f7d54320d5c73089b7f1bf5e68cf22d046d790480f8355fd82324e25409e3d8c"
+      url "https://github.com/treygoff24/lens/releases/download/v0.1.2/lens-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "3711af3ac3415c3f0bc7a56f218aba1e1955ef87a030c6e8a2e3168d3e23d7f7"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/lens/releases/download/v0.1.1/lens-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "43e1081491b2409656e9a595a7a9eb18a900ce7bd4a977b9e0d9b7f8c8b0bde2"
+      url "https://github.com/treygoff24/lens/releases/download/v0.1.2/lens-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "50350ba21caeeb8fac2cdef3dc6037b8fc65b219769b66e9d99335ff65547183"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/lens/releases/download/v0.1.1/lens-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "058cdfe8617a84a097711b99a716d64ff0ec77162208e15204040b05bb4c63cb"
+      url "https://github.com/treygoff24/lens/releases/download/v0.1.2/lens-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4cbc1a6572b6fbfb8b16a96cf08f60b4721b2d901b3080fbd6325e57d9e68683"
     end
   end
   license "Apache-2.0"
