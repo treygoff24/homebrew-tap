@@ -1,35 +1,35 @@
 class ExaAgent < Formula
   desc "Agent-first CLI over the full Exa API surface (single static binary)"
   homepage "https://github.com/treygoff24/exa-agent-cli"
-  version "0.1.0"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.1.0/exa-agent-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "08124f2b72cd7ea2dbd74a2d283f1d93a1ef5621ccd6757ea50e22b41b9ca355"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.2.0/exa-agent-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "3597ba26f46c0e8c0a7b0093a314a5790664bd57095969265dc71ef12da260d5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.1.0/exa-agent-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "c08a6078507708668d0d95ee08a5f947004d71acaf0994e7a12037677d2889c6"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.2.0/exa-agent-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "5522f540367a68d70ceacd21d456c5e5dd2682e0fe96c35d4f69286e016ceb1d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.1.0/exa-agent-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ed4f8738de047d44ff10abc5cc12ac27aa38e467f966611bb0826cd742033f75"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.2.0/exa-agent-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "2a7264b685045d18a7c4643d38dffef8589ed8017a4bb8d4b9c86417acc1fd83"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.1.0/exa-agent-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "639258dd7d1d42c3b17dc381b8abf0a9bff94708f01149f3a8e222531d5a0183"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.2.0/exa-agent-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "91631aa2e2fc061f8f14e88af9c94452de7b3b61f972ecbd1600c5328e34aeb0"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
+    "aarch64-apple-darwin": {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-unknown-linux-gnu":  {},
-  }.freeze
+    "x86_64-apple-darwin": {},
+    "x86_64-unknown-linux-gnu": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -47,10 +47,18 @@ class ExaAgent < Formula
   end
 
   def install
-    bin.install "exa-agent" if OS.mac? && Hardware::CPU.arm?
-    bin.install "exa-agent" if OS.mac? && Hardware::CPU.intel?
-    bin.install "exa-agent" if OS.linux? && Hardware::CPU.arm?
-    bin.install "exa-agent" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "exa-agent"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "exa-agent"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "exa-agent"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "exa-agent"
+    end
 
     install_binary_aliases!
 
