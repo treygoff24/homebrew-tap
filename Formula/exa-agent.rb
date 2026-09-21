@@ -1,34 +1,38 @@
 class ExaAgent < Formula
   desc "Agent-first CLI over the full Exa API surface (single static binary)"
   homepage "https://github.com/treygoff24/exa-agent-cli"
-  version "0.6.0"
+  version "0.7.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.6.0/exa-agent-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "fd474e026d15fce6d7c2866badec7806403a01890544bfa43b28502f75c46bad"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.7.0/exa-agent-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "3acadaaca8046fe7735ef4acdcc48e6674bb0e7bc015e00170aab242acb50e58"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.6.0/exa-agent-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "11b2b1a6714ca07fe08494e719b6f0cdf98c32226a5f68e6b114d0fc1700f5d1"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.7.0/exa-agent-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "b764c6132507e6a21c3588821388838df454f7a30d82ff6fd21c4da33b1e5abd"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.6.0/exa-agent-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a234ee35092b37086f65919ccf5f36aaca8e1e4d5d4babc0dca89b99c1e453ea"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.7.0/exa-agent-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3e9383cbd384b7442a67fc44f87cd1a82aed19f50fa675a73e024b74f0e93ed8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.6.0/exa-agent-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6b72e954f2ca2639d41c7ed69f955843c91872133e7ea7388ff4f863e9f14b37"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.7.0/exa-agent-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "bad8e3a2f5cd909a445b60d1c1590780f6de2ea5aa0833d9a3ab6e6716538c1a"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
