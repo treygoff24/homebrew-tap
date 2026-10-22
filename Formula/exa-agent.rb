@@ -1,25 +1,25 @@
 class ExaAgent < Formula
   desc "Agent-first CLI over the full Exa API surface (single static binary)"
   homepage "https://github.com/treygoff24/exa-agent-cli"
-  version "0.8.0"
+  version "0.8.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.8.0/exa-agent-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "d5607f8c66d541a0f1a0662117866d42d2831c49174fa1de7bc9e91db84b9170"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.8.1/exa-agent-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "8f1c768f36cf6a7a3e32b6f82c7ee20c5a02d2bb8d4806ce0dd9113c9a9f6562"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.8.0/exa-agent-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "307b516de4ab5f44643c29eac6b3da816ba878934c3cc7e83e4fe7deea41b40d"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.8.1/exa-agent-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "27cef48995fdbdb1a0d787ae71a5c8541e64748c41e886060e14195be057fe6b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.8.0/exa-agent-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "930663a504aba1b691f34e1db9a884848cee91b26c388c8ad148e145c33b6c42"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.8.1/exa-agent-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "5ce8e6c0fc3e3fb1de2c4551441924518df64fbde938e68f6d4f2efcbb6203d2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.8.0/exa-agent-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b67e90fbf3d19a04be50f01695cd1abd90b6c797b14fcd2965ae99c0c5c077c9"
+      url "https://github.com/treygoff24/exa-agent-cli/releases/download/v0.8.1/exa-agent-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "44fd096063b0bc23c9c272b2dbe77829742375a5f3a1020329e8191bce83e4d2"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
