@@ -1,25 +1,25 @@
 class Receipts < Formula
   desc "Source-verified research at function-call latency. Agent-first CLI: every claim comes back with a source URL, quote, and verdict."
   homepage "https://github.com/treygoff24/receipts"
-  version "0.3.0"
+  version "0.3.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/receipts/releases/download/v0.3.0/receipts-aarch64-apple-darwin.tar.xz"
-      sha256 "4cdd5581abb2f3f7021e104947b1d5704c5e3f4e9afa4399e631b580960b0f12"
+      url "https://github.com/treygoff24/receipts/releases/download/v0.3.1/receipts-aarch64-apple-darwin.tar.xz"
+      sha256 "02b2857db57bf9613be7764c90a1376e3b5a188d639f19c42a853cc8d66c06b2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/receipts/releases/download/v0.3.0/receipts-x86_64-apple-darwin.tar.xz"
-      sha256 "3d710890dbbecd764d635eb8f5b0e31c032edc4801698554da6b4b18b2ad015f"
+      url "https://github.com/treygoff24/receipts/releases/download/v0.3.1/receipts-x86_64-apple-darwin.tar.xz"
+      sha256 "2c10774346fa4073d52262fb55b23bf5b89434ddf1cee6ade03c9fe04dfd9bea"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/receipts/releases/download/v0.3.0/receipts-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "80e1524252f7903cd460ba6dfa6e6882b6d21d55db17013b335307aca40b5de3"
+      url "https://github.com/treygoff24/receipts/releases/download/v0.3.1/receipts-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "4e5c78ef297fa6466c9c9918178e991c8eccea964637054e6f09d3c8d175577e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/receipts/releases/download/v0.3.0/receipts-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "13c6548708536b903ca209fd60cfb3cce1d06de8b1b5727cae743588078cc40d"
+      url "https://github.com/treygoff24/receipts/releases/download/v0.3.1/receipts-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "9ba4a61e6d54b186378b1238ca5d6e809011ee9a4bdee06b81cc6f1da5a78833"
     end
   end
   license "Apache-2.0"
@@ -48,10 +48,18 @@ class Receipts < Formula
   end
 
   def install
-    bin.install "receipts" if OS.mac? && Hardware::CPU.arm?
-    bin.install "receipts" if OS.mac? && Hardware::CPU.intel?
-    bin.install "receipts" if OS.linux? && Hardware::CPU.arm?
-    bin.install "receipts" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "receipts"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "receipts"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "receipts"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "receipts"
+    end
 
     install_binary_aliases!
 
