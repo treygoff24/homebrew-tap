@@ -1,35 +1,35 @@
 class Scout < Formula
   desc "Corpus hydration at retina speed — fast, cheap, hallucination-firewalled orientation for AI agents in any directory of code or documents."
   homepage "https://github.com/treygoff24/scout"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/scout/releases/download/v0.1.0/scout-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "4bdd5b138818049fae29c0f1f3136c8fff9d4791310463f9f3489687481181cf"
+      url "https://github.com/treygoff24/scout/releases/download/v0.1.1/scout-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "875b5e101cc75b29c406b0155f202715a23f9c2b7402f9009dcea74e9188191d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/scout/releases/download/v0.1.0/scout-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "69e9a1279a0be45fcf08358cd7ec476fd7994f2468e6312e905783e669994bd0"
+      url "https://github.com/treygoff24/scout/releases/download/v0.1.1/scout-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "cca046884bf8c9858243b81a6e2d8ef671d94ed4b02729d59d0bc8eab6bd1a83"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/scout/releases/download/v0.1.0/scout-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "4e5abe230969a6c52d6cbf38d14581bf4c339a19bbb82302be67d744e5b055a1"
+      url "https://github.com/treygoff24/scout/releases/download/v0.1.1/scout-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a4b84af64ae00ae0e503ebade1f83da8e52ce305b2a85403bceaf85ec420eeea"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/scout/releases/download/v0.1.0/scout-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d76c7b3f8f52bf5fcd9801cadf8f92a08bf54f1405befd3da09198d55eef9c51"
+      url "https://github.com/treygoff24/scout/releases/download/v0.1.1/scout-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "39ad23e6a44353181c5c21755faac320596c854a38d0aad0fb04c8eaa1f5cc29"
     end
   end
   license "Apache-2.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
+    "aarch64-apple-darwin": {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-unknown-linux-gnu":  {},
-  }.freeze
+    "x86_64-apple-darwin": {},
+    "x86_64-unknown-linux-gnu": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -47,10 +47,18 @@ class Scout < Formula
   end
 
   def install
-    bin.install "scout" if OS.mac? && Hardware::CPU.arm?
-    bin.install "scout" if OS.mac? && Hardware::CPU.intel?
-    bin.install "scout" if OS.linux? && Hardware::CPU.arm?
-    bin.install "scout" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "scout"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "scout"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "scout"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "scout"
+    end
 
     install_binary_aliases!
 
