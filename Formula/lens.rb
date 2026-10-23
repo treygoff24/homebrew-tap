@@ -1,25 +1,25 @@
 class Lens < Formula
   desc "Agent-first CLI for natural-language image-library search: caption once with Cerebras vision, then search the whole index in one model call."
   homepage "https://github.com/treygoff24/lens"
-  version "0.1.2"
+  version "0.1.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/lens/releases/download/v0.1.2/lens-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "d28eb885bbeae6be18a0931744115e39a2e9753db0ac3fa9dd6f649c221c254a"
+      url "https://github.com/treygoff24/lens/releases/download/v0.1.3/lens-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "343ddda4fd3e32e3145ad7e08935fad722fae292a21a93c6bcbe75bd8698501e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/lens/releases/download/v0.1.2/lens-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "3711af3ac3415c3f0bc7a56f218aba1e1955ef87a030c6e8a2e3168d3e23d7f7"
+      url "https://github.com/treygoff24/lens/releases/download/v0.1.3/lens-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "ff9a539a322908f5a8abeef320b14a9a62d93ec5539f86c9eb5a45e3ddec5e8d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/treygoff24/lens/releases/download/v0.1.2/lens-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "50350ba21caeeb8fac2cdef3dc6037b8fc65b219769b66e9d99335ff65547183"
+      url "https://github.com/treygoff24/lens/releases/download/v0.1.3/lens-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d5ac2ae0b4464e02e9d4422d633b995a062a0ac43833f8d52735fc4f5b852af5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/treygoff24/lens/releases/download/v0.1.2/lens-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4cbc1a6572b6fbfb8b16a96cf08f60b4721b2d901b3080fbd6325e57d9e68683"
+      url "https://github.com/treygoff24/lens/releases/download/v0.1.3/lens-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f98dcf542cbf573146ed58cb091efaead0ec71388deb2de6b558c6d2739f8cf5"
     end
   end
   license "Apache-2.0"
@@ -47,10 +47,18 @@ class Lens < Formula
   end
 
   def install
-    bin.install "lens" if OS.mac? && Hardware::CPU.arm?
-    bin.install "lens" if OS.mac? && Hardware::CPU.intel?
-    bin.install "lens" if OS.linux? && Hardware::CPU.arm?
-    bin.install "lens" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "lens"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "lens"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "lens"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "lens"
+    end
 
     install_binary_aliases!
 
